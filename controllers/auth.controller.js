@@ -85,6 +85,8 @@ const revalidarToken=async(req,res=response,next)=>{
         ok:true,
         msg:'revalidar token',
         token,
+        uid:req.uid,
+        name:req.name,
     });
 }
 
