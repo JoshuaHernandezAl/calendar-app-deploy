@@ -17,11 +17,10 @@ const validarJWT=async(req,res=response,next)=>{
         return next();
     }catch(err){
         console.log(err);
-        res.status(401).json({
+        return res.status(401).json({
             msg:'Token no valido',
         });
     }
-    next();
 }
 
 
