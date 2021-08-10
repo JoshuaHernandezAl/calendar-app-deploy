@@ -64,7 +64,7 @@ const eliminarEvento=async(req,res=response,next)=>{
     try{
         const evento = await Evento.findById(eventoId);
         if(!evento){
-            res.status(404).json({
+            return res.status(404).json({
                 ok:false,
                 msg:"Error,evento no encontrado",
             });
@@ -82,7 +82,7 @@ const eliminarEvento=async(req,res=response,next)=>{
         });
     }catch(err){
         console.log(err);
-        res.status(500).json({
+        return res.status(500).json({
             ok:false,
             msg:"Contacte al administrador",
         });
